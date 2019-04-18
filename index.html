@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News363 - Lab 10</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+
+    <style>
+        img { max-width:100%; display:inline-block; }
+        .text-overflow { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+    </style>
+</head>
+
+<body ng-app="news363" class="pt-5">
+    <!-- Convert this into a main-header component -->
+    <header>
+        <nav class="navbar navbar-light bg-light border-bottom fixed-top">
+            <div class="container">
+                <a href="#" class="navbar-brand">News363</a>
+
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item mr-4">
+                        <a href="#top-news" class="nav-link">Top News</a>
+                    </li>
+                    <li class="nav-item mr-4">
+                        <a href="#technology" class="nav-link">Technology</a>
+                    </li>
+                    <li class="nav-item mr-4">
+                        <a href="#ny-times" class="nav-link">Source: NY Times</a>
+                    </li>
+                    <li class="nav-item mr-4">
+                        <a href="#espn" class="nav-link">Source: ESPN</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="top-news" class="row py-5 border-bottom" ng-controller="topNewsCtrl">
+            <h2 class="col-12 text-center font-weight-light text-dark mb-4">Top Stories</h2>
+
+            <!-- 4 detailed news items (image, headline, preview) -->
+        </section>
+
+        <section id="technology" class="row py-5 border-bottom" ng-controller="techNewsCtrl">
+            <h2 class="col-12 text-center font-weight-light text-dark mb-4">Technology</h2>
+
+            <!-- 4 detailed news items (image, headline, preview) -->
+        </section>
+
+        <div class="row py-5">
+            <section id="ny-times" class="col-6 border-right" ng-controller="nyTimesNewsCtrl">
+                <h2 class="text-center font-weight-light text-dark mb-4">From: The NY Times</h2>
+
+                <!-- List of 10 news headlines -->
+            </section>
+
+            <section id="espn" class="col-6" ng-controller="espnNewsCtrl">
+                <h2 class="text-center font-weight-light text-dark mb-4">From: ESPN</h2>
+
+                <!-- List of 10 news headlines -->
+            </section>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 py-4">&copy; 2019 News363</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
