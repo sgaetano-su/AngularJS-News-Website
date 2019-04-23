@@ -11,45 +11,33 @@
     <style>
         img { max-width:100%; display:inline-block; }
         .text-overflow { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+        html {scroll-behavior: smooth;
+            
+        }
     </style>
 </head>
 
 <body ng-app="news363" class="pt-5">
     <!-- Convert this into a main-header component -->
-    <header>
-        <nav class="navbar navbar-light bg-light border-bottom fixed-top">
-            <div class="container">
-                <a href="#" class="navbar-brand">News363</a>
-
-                <ul class="navbar-nav flex-row">
-                    <li class="nav-item mr-4">
-                        <a href="#top-news" class="nav-link">Top News</a>
-                    </li>
-                    <li class="nav-item mr-4">
-                        <a href="#technology" class="nav-link">Technology</a>
-                    </li>
-                    <li class="nav-item mr-4">
-                        <a href="#ny-times" class="nav-link">Source: NY Times</a>
-                    </li>
-                    <li class="nav-item mr-4">
-                        <a href="#espn" class="nav-link">Source: ESPN</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <main-header></main-header>
 
     <div class="container">
         <section id="top-news" class="row py-5 border-bottom" ng-controller="topNewsCtrl">
             <h2 class="col-12 text-center font-weight-light text-dark mb-4">Top Stories</h2>
 
             <!-- 4 detailed news items (image, headline, preview) -->
+            <detailed-story-item class="col-6" ng-repeat="item in news" item="item"></detailed-story-item>
+
+
+
         </section>
 
         <section id="technology" class="row py-5 border-bottom" ng-controller="techNewsCtrl">
             <h2 class="col-12 text-center font-weight-light text-dark mb-4">Technology</h2>
 
             <!-- 4 detailed news items (image, headline, preview) -->
+            <detailed-story-item class="col-6" ng-repeat="item in news" item="item"></detailed-story-item>
+
         </section>
 
         <div class="row py-5">
@@ -57,12 +45,16 @@
                 <h2 class="text-center font-weight-light text-dark mb-4">From: The NY Times</h2>
 
                 <!-- List of 10 news headlines -->
+                <story-item-list ng-repeat="item in news" item="item"></story-item-list>
+
             </section>
 
             <section id="espn" class="col-6" ng-controller="espnNewsCtrl">
                 <h2 class="text-center font-weight-light text-dark mb-4">From: ESPN</h2>
 
                 <!-- List of 10 news headlines -->
+                <story-item-list ng-repeat="item in news" item="item"></story-item-list>
+
             </section>
         </div>
     </div>
